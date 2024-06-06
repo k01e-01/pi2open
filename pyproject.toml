@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "pi2open"
+version = "0.1.0"
+description = "a pishock to openshock api translation layer"
+authors = ["k01e-01 <k01e.alm07@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = {extras = ["async"], version = "^3.0.3"}
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+poetry-plugin-export = "^1.8.0"
+black = "^24.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
