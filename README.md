@@ -12,7 +12,7 @@ on linux, this can be achieved by adding `127.0.0.1 do.pishock.com` to your /etc
 once you've done that, make sure to provide both the shocker id and api key for openshock via either an environment variable like so
 ```
 OPENSHOCK_TOKEN=your-token-here
-OPENSHOCK_SHOCKER=your-device-id-here
+OPENSHOCK_SHOCKER=your-shocker-id-here
 ```
 or by editing to variables in main.py of the same names
 

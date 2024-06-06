@@ -31,7 +31,7 @@ def token_err():
 
 def shocker_err():
     print(
-        "please provide a device id, either through the envvar OPENSHOCK_SHOCKER or via the variable"
+        "please provide a shocker id, either through the envvar OPENSHOCK_SHOCKER or via the variable"
     )
     exit(1)
 
