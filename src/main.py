@@ -16,7 +16,7 @@ from openshock import ControlType, openshock_api
 import os
 
 
-PORT = 80
+PORT = 8000
 OPENSHOCK_URL = "https://api.shocklink.net/"
 OPENSHOCK_TOKEN = None
 OPENSHOCK_DEVICE = None
@@ -73,4 +73,4 @@ async def handle_pishock_request():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=PORT, debug=True)
+    app.run(host="localhost", port=PORT, debug=True, ssl_context="adhoc")
