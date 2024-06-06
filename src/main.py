@@ -19,7 +19,7 @@ import os
 PORT = 8000
 OPENSHOCK_URL = "https://api.openshock.app/"
 OPENSHOCK_TOKEN = None
-OPENSHOCK_DEVICE = None
+OPENSHOCK_SHOCKER = None
 
 
 def token_err():
@@ -29,9 +29,9 @@ def token_err():
     exit(1)
 
 
-def device_err():
+def shocker_err():
     print(
-        "please provide a device id, either through the envvar OPENSHOCK_DEVICE or via the variable"
+        "please provide a device id, either through the envvar OPENSHOCK_SHOCKER or via the variable"
     )
     exit(1)
 
@@ -41,8 +41,8 @@ api = openshock_api(
     api_key=OPENSHOCK_TOKEN or os.environ.get("OPENSHOCK_TOKEN") or token_err(),
     url=OPENSHOCK_URL,
 )
-dev = api.create_shocker(
-    shocker_id=OPENSHOCK_DEVICE or os.environ.get("OPENSHOCK_DEVICE") or device_err(),
+shk = api.create_shocker(
+    shocker_id=OPENSHOCK_SHOCKER or os.environ.get("OPENSHOCK_SHOCKER") or shocker_err(),
 )
 
 op_to_type = {
@@ -61,7 +61,7 @@ async def handle_pishock_request():
 
     print(f"Recieved from client: {data}")
 
-    res = await dev.control(
+    res = await shk.control(
         type=op_to_type[data["Op"]],
         intensity=int(data["Intensity"]),
         duration=int(data["Duration"]) * 1000,
