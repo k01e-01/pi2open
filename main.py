@@ -16,7 +16,7 @@ from openshock import ControlType, openshock_api
 import os
 
 
-PORT = 8000
+PORT = 80
 OPENSHOCK_URL = "https://api.shocklink.net/"
 OPENSHOCK_TOKEN = None
 OPENSHOCK_DEVICE = None
